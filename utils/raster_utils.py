@@ -89,8 +89,8 @@ class Raster_Utils:
         raise Exception(f"For some reason array no data val is not {self.no_data_val}")
         
       #7 Asserting that numpy array will be float32
-      if raster.dtype != np.float32: 
-        raise Exception(f"For some reason array no data val is not {self.no_data_val}")
+      if raster.meta['dtype'] != 'float32': 
+        raise Exception(f"For some reason array dtype is not float32")
       
       #8 Setting raster to none. The information that matters is the rater aray
       raster = None
