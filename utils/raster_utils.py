@@ -89,12 +89,12 @@ class Raster_Utils:
       if raster.meta['dtype'] != 'float32': 
         raise Exception(f"For some reason array dtype is not float32")
       
-      #6 Setting raster to none. The information that matters is the rater aray
-      raster = None
-      
-      #7 Extracting only the window from Raster Standars Object
+      #6 Extracting only the window from Raster Standars Object
       raster_array = raster.read(1)
 
+      #7 Setting raster to none. The information that matters is the rater aray
+      raster = None
+      
       return raster_array
   
   def get_raster_infos(self,raster_path):
