@@ -100,11 +100,11 @@ class Raster_Utils:
   def get_raster_infos(self,raster_path):
       """ Returns infos (raster_array,xgrid,ygrid) from a contry mask reference array"""
       raster = rasterio.open(raster_path)
-      resolution = raster.meta['transform'][0]
+      resolution = raster.meta['transform']
       raster_array = self._read_and_check(raster,raster_path.split("/")[-1])
       xgrid = np.arange(self.x_min_limit, self.x_min_limit+raster_array.shape[1]*resolution, resolution)
       ygrid = np.arange(self.y_min_limit, self.y_min_limit+raster_array.shape[0]*resolution, resolution)
       x_center = np.mean(xgrid)
       y_center = np.mean(ygrid)
-      return raster_array,xgrid,ygrid,x_center,y_center
+      return raster_array,raster.meta,xgrid,ygrid,x_center,y_center
   
