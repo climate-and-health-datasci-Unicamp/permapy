@@ -81,21 +81,21 @@ class Raster_Utils:
         raise Exception("Sorry,crs from this raster is no EPSG:4326")
         # raster = raster.to_crs(epsg=self.crs)
 
-      #4 Extracting only the window from Raster Standars Object
-      raster_array = raster.read(1)
-
-      #6 converting nodata value if necessary
+      #4 converting nodata value if necessary
       if raster.nodata != self.no_data_val:
         raise Exception(f"For some reason array no data val is not {self.no_data_val}")
         
-      #7 Asserting that numpy array will be float32
+      #5 Asserting that numpy array will be float32
       if raster.meta['dtype'] != 'float32': 
         raise Exception(f"For some reason array dtype is not float32")
       
-      #8 Setting raster to none. The information that matters is the rater aray
+      #6 Setting raster to none. The information that matters is the rater aray
       raster = None
+      
+      #7 Extracting only the window from Raster Standars Object
+      raster_array = raster.read(1)
 
-      return raster_array_final
+      return raster_array
   
   def get_raster_infos(self,raster_path):
       """ Returns infos (raster_array,xgrid,ygrid) from a contry mask reference array"""
