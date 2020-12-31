@@ -92,11 +92,11 @@ For every case species distributions maps and Kfold ROC curves with average AUC 
 
 * Species distribution:
 
-[distribution](./Imgs/distribution.png)
+![distribution](./Imgs/distribution.png)
 
 * Kfold ROC and AUC:
 
-[roc_auc](./Imgs/roc_auc.png)
+![roc_auc](./Imgs/roc_auc.png)
 
 The summary of the results can be checked on the table below:
 
